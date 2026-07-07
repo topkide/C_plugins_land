@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '8.3.9'
+}
+
+version = project.version
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
+repositories {
+    maven { url = uri("https://repo.papermc.io/repository/maven-public/") }
+    mavenCentral()
+}
+
+dependencies {
+    // Paper API (의뢰자 서버 기준 1.21.4)
+    compileOnly "io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT"
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok:1.18.32"
+    annotationProcessor "org.projectlombok:lombok:1.18.32"
+
+    // 단일 서버 + YAML 저장이라 MySQL/Redis 의존성은 사용하지 않음.
+    // 추후 멀티서버 확장 시 여기에 HikariCP / Jedis 를 추가하면 됨.
+}
+
+ext {
+    set("projectName", project.name)
+    set("packageName", project.name.toLowerCase())
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.processResources {
+    filesMatching("plugin.yml") {
+        expand([
+                group      : project.group,
+                version    : project.version,
+                projectName: project.ext.projectName,
+                packageName: project.ext.packageName,
+        ])
+    }
+}
+
+// 배포 편의를 위해 build 시 shadowJar 산출물을 기본 jar 로 사용
+tasks.build {
+    dependsOn tasks.shadowJar
+}

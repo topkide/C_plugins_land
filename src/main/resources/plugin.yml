@@ -1,0 +1,26 @@
+name: '${projectName}'
+version: '${version}'
+main: '${group}.${packageName}.${projectName}Plugin'
+api-version: '1.21'
+author: dotorimaru
+description: '토지(부동산) 구매/보호/판매 시스템. 기존 Skript 화폐/상점과 연동.'
+softdepend: [ ItemsAdder, Skript ]
+
+commands:
+  부동산:
+    description: '내 토지 관리 GUI 를 엽니다.'
+    usage: '/부동산'
+    aliases: [ land, realestate ]
+  부동산관리:
+    description: '토지 구매서/토지권 관리 (운영자)'
+    usage: '/부동산관리'
+    permission: land.admin
+    aliases: [ landadmin ]
+
+permissions:
+  land.admin:
+    description: '토지 운영자 명령어 사용 권한'
+    default: op
+  land.bypass:
+    description: '모든 토지 보호를 무시합니다.'
+    default: op

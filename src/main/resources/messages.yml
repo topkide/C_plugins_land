@@ -1,0 +1,56 @@
+# 모든 메시지는 & 색상코드를 사용합니다. %...% 는 치환자입니다.
+prefix: "&2[부동산] &r"
+
+# 공통
+no-permission: "%prefix%&c권한이 없습니다."
+player-only: "%prefix%&c플레이어만 사용할 수 있습니다."
+reload-done: "%prefix%&a설정을 다시 불러왔습니다."
+
+# 구매서/토지권
+cert-base-set: "%prefix%&a손에 든 아이템을 토지 구매서 기본 디자인으로 지정했습니다."
+cert-base-empty: "%prefix%&c손에 아이템을 든 상태에서 사용해주세요."
+cert-need-base: "%prefix%&c먼저 &e/부동산관리 아이템지정 &c으로 기본 디자인을 지정해주세요."
+cert-created: "%prefix%&a토지권 &e%name% &a(&f%width%x%length%&a, 가격 &f%price%&a) 을 생성했습니다."
+cert-exists: "%prefix%&c이미 존재하는 토지권 이름입니다: &e%name%"
+cert-deleted: "%prefix%&a토지권 &e%name% &a을 삭제했습니다."
+cert-not-found: "%prefix%&c존재하지 않는 토지권입니다: &e%name%"
+cert-list-header: "%prefix%&a등록된 토지권 목록"
+cert-list-line: "&a| &f%name% &7- %width%x%length% &7/ 가격 &f%price% &7(&f%currency%&7)"
+cert-list-empty: "%prefix%&7등록된 토지권이 없습니다."
+cert-given: "%prefix%&a%target% &a님에게 토지권 &e%name% &a%amount%개를 지급했습니다."
+cert-give-target-offline: "%prefix%&c대상 플레이어가 접속 중이 아닙니다."
+cert-give-inventory-full: "%prefix%&c대상의 인벤토리가 가득 찼습니다."
+
+# 선택/구매
+select-start: "%prefix%&a토지 선택 모드입니다. 원하는 위치를 바라보고 다시 우클릭하면 구매합니다."
+select-cancel: "%prefix%&7토지 선택을 취소했습니다."
+select-look-air: "%prefix%&c지면을 바라본 상태에서 지정해주세요."
+buy-success: "%prefix%&a토지를 구매했습니다. (&f%width%x%length%&a, &f%currency% %price%&a)"
+buy-merged: "%prefix%&a인접한 내 토지와 자동으로 합쳐졌습니다."
+buy-overlap: "%prefix%&c이 땅은 이미 구매되었습니다."
+buy-world-not-allowed: "%prefix%&c이 월드에서는 토지를 구매할 수 없습니다."
+buy-limit-reached: "%prefix%&c보유 가능한 최대 토지 수(&e%max%&c)에 도달했습니다."
+
+# 보호
+protection-denied: "%prefix%&c이곳은 &e%owner% &c님의 보호된 토지입니다."
+protection-on: "%prefix%&a토지 보호를 켰습니다."
+protection-off: "%prefix%&e토지 보호를 껐습니다. 누구나 건축할 수 있습니다."
+protection-not-standing: "%prefix%&c보호를 변경할 토지 위에 서 있어야 합니다."
+protection-not-owner: "%prefix%&c본인 소유의 토지에서만 변경할 수 있습니다."
+
+# 진입 안내
+entry-title: "&e%owner%&f님의 땅"
+entry-title-own: "&a내 토지"
+
+# GUI
+gui-list-title: "내 토지 목록"
+gui-detail-title: "토지 정보"
+gui-confirm-title: "정말 판매하시겠습니까?"
+gui-empty: "&7소유한 토지가 없습니다."
+
+# 판매/환불
+sell-success: "%prefix%&a토지를 판매했습니다."
+sell-refund: "&a| &7환불: &f%amount% %currency%"
+sell-refund-voucher: "%prefix%&a환불 수표를 지급했습니다. 우클릭하여 지갑에 넣어주세요."
+sell-not-owner: "%prefix%&c본인 소유의 토지만 판매할 수 있습니다."
+sell-cancelled: "%prefix%&7판매를 취소했습니다."
